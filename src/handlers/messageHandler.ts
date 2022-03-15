@@ -82,8 +82,8 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 		: authorMember.nickname;
 
 	const name = emojisEnabled(guild)
-		? `🆕 ${authorName} (${creationDate})`
-		: `${authorName} (${creationDate})`;
+		? `🆕 ${message} (${creationDate})`
+		: `${message} (${creationDate})`;
 
 	const thread = await message.startThread({
 		name,
