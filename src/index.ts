@@ -21,7 +21,7 @@ console.log(`Welcome to Auto Thread`);
 		presence: {
 			activities: [{
 				type: "LISTENING",
-				name: "To You Type!",
+				name: "You Type!",
 			}],
 		},
 	});
