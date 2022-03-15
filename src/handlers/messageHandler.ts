@@ -77,13 +77,14 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	});
 
 	const creationDate = message.createdAt.toISOString().slice(0, 10);
+	const messagetitle = message.content.slice(0, 97);
 	const authorName = authorMember === null || authorMember.nickname === null
 		? authorUser.username
 		: authorMember.nickname;
 
 	const name = emojisEnabled(guild)
-		? `🆕 ${message} (${creationDate})`
-		: `${message} (${creationDate})`;
+		? `🆕 ${messagetitle} (${creationDate})`
+		: `${messagetitle} (${creationDate})`;
 
 	const thread = await message.startThread({
 		name,
