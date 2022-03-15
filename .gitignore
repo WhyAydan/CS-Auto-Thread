@@ -3,3 +3,4 @@ dist/
 configs/
 
 .env
+.gitpod.yml
