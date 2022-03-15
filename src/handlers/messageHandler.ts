@@ -77,7 +77,7 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	});
 
 	const creationDate = message.createdAt.toISOString().slice(0, 10);
-	const messagetitle = message.content.slice(0, 88);
+	const messagetitle = message.content.slice(0, 80);
 	const authorName = authorMember === null || authorMember.nickname === null
 		? authorUser.username
 		: authorMember.nickname;
