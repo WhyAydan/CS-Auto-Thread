@@ -100,7 +100,7 @@ export function getDiscordInviteButton(buttonText = "Join the support server"): 
 	return new MessageButton()
 		.setLabel(buttonText)
 		.setStyle("LINK")
-		.setURL("https://discord.gg/8BmnndXHp6")
+		.setURL("https://github.com/WhyAydan/CS-Auto-Thread")
 		.setEmoji("930584823473516564"); // :discord_light:
 }
 
