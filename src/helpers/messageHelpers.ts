@@ -96,12 +96,12 @@ export function replaceMessageVariables(message: string, requestId: Snowflake): 
 		.replaceAll("\\n", "\n");
 }
 
-export function getDiscordInviteButton(buttonText = "Join the support server"): MessageButton {
+export function getDiscordInviteButton(buttonText = "Who made me?"): MessageButton {
 	return new MessageButton()
 		.setLabel(buttonText)
 		.setStyle("LINK")
-		.setURL("https://github.com/WhyAydan/CS-Auto-Thread")
-		.setEmoji("930584823473516564"); // :discord_light:
+		.setURL("https://github.com/WhyAydan/")
+		.setEmoji("🚧"); // :discord_light:
 }
 
 export function getGithubRepoButton(buttonText = "Source code"): MessageButton {
