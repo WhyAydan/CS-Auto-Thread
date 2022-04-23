@@ -105,7 +105,8 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	const overrideMessageContent = getConfig(guild.id).threadChannels?.find(x => x?.channelId === channel.id)?.messageContent;
 	const msgContent = overrideMessageContent
 		? replaceMessageVariables(overrideMessageContent, requestId)
-		: getMessage("SUCCESS_THREAD_CREATE", requestId);
+		: getMessage("SUCCESS_THREAD_CREATE", requestId)
+		+ "Test";
 
 	if (msgContent && msgContent.length > 0) {
 		const msg = await thread.send({
