@@ -17,7 +17,7 @@
 		"ERR_CHANNEL_SLOWMODE": "The bot does not have permissions to Manage Threads in $CHANNEL. Change the permissions and try again.",
 		"ERR_AMBIGUOUS_THREAD_AUTHOR": "Could not determine the author of this thread, because the initial message was missing.",
 
-		"SUCCESS_THREAD_CREATE": "Thread automatically created by $USER in $CHANNEL. \n If you have a suggestion or a bug report please file it directly on our github at whichever repo is suitable. \n CrowdSec agent: https://github.com/crowdsecurity/crowdsec/issues/new/choose \n Parser/Scenario: https://github.com/crowdsecurity/hub/issues/new/choose \n Docs: https://github.com/crowdsecurity/crowdsec-docs/issues/new/choose \n Bouncer: The specific repo (e.g. https://github.com/crowdsecurity/cs-firewall-bouncer/issues/new/choose) \n To make sure we register your request correctly.",
+		"SUCCESS_THREAD_CREATE": "Thread automatically created by $USER in $CHANNEL. \n If you have a suggestion or a bug report please file it directly on our github at whichever repo is suitable. \n CrowdSec agent: <https://github.com/crowdsecurity/crowdsec/issues/new/choose> \n Parser/Scenario: <https://github.com/crowdsecurity/hub/issues/new/choose> \n Docs: <https://github.com/crowdsecurity/crowdsec-docs/issues/new/choose> \n Bouncer: The specific repo (e.g. <https://github.com/crowdsecurity/cs-firewall-bouncer/issues/new/choose>) \n To make sure we register your request correctly.",
 		"SUCCESS_THREAD_ARCHIVE_IMMEDIATE": "Thread was archived by $USER. Anyone can send a message to unarchive it.",
 		"SUCCESS_THREAD_ARCHIVE_SLOW": "This thread will be archived automatically after 1 hour of inactivity as requested by $USER."
 	}
