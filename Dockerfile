@@ -7,6 +7,9 @@ RUN npm install
 
 COPY . .
 RUN npm run build
+RUN mkdir /configs
+RUN chown node:node /configs
+
 
 # Run
 FROM node:16.14.0-slim
