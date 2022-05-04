@@ -19,7 +19,7 @@ COPY package*.json ./
 RUN npm install --production
 COPY --from=build /app/dist ./dist
 
-RUN chown -Rh $user:$user /configs
+RUN chown -Rh node:node /configs
 
 VOLUME [ "/configs" ]
 
