@@ -101,6 +101,7 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	const helpButton = getHelpButton();
 
 	const buttonRow = new MessageActionRow().addComponents(closeButton, helpButton);
+	const demo = new MessageActionRow().addComponents(closeButton, helpButton);
 
 	const overrideMessageContent = getConfig(guild.id).threadChannels?.find(x => x?.channelId === channel.id)?.messageContent;
 	const msgContent = overrideMessageContent
@@ -110,7 +111,8 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	if (msgContent && msgContent.length > 0) {
 		const msg = await thread.send({
 			content: msgContent,
-			components: [buttonRow],
+			components: [buttonRow, demo],
+
 		});
 
 		if (botMember.permissionsIn(thread.id).has(Permissions.FLAGS.MANAGE_MESSAGES)) {
