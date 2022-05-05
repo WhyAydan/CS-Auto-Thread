@@ -1,4 +1,4 @@
-import { type Message, MessageActionRow, MessageButton, NewsChannel, TextChannel, ThreadChannel, Name, SnowflakeUtil, type Snowflake, Permissions } from "discord.js";
+import { type Message, MessageActionRow, MessageButton, NewsChannel, TextChannel, ThreadChannel, SnowflakeUtil, type Snowflake, Permissions } from "discord.js";
 import { emojisEnabled, getConfig, includeBotsForAutothread, getSlowmodeSeconds } from "../helpers/configHelpers";
 import { getMessage, resetMessageContext, addMessageContext, isAutoThreadChannel, getHelpButton, replaceMessageVariables, getThreadAuthor } from "../helpers/messageHelpers";
 import { getRequiredPermissions, getSafeDefaultAutoArchiveDuration } from "../helpers/permissionHelpers";
@@ -132,7 +132,7 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 
 	(async () => {
 		await webhook.send({
-		  text: `New Thread Made With The Title ${messagetitle} at ${creationDate} ${ThreadChannel} - https://discord.com/channels/${server}/${chanid}`,
+		  text: `New Thread Made With The Title ${messagetitle} at ${creationDate} ${TextChannel} - https://discord.com/channels/${server}/${chanid}`,
 		});
 	})();
 
