@@ -7,6 +7,7 @@ import {
 	type ThreadChannel,
 	type User,
 	type Snowflake,
+	type Name,
 } from "discord.js";
 
 import type { MessageContext } from "../types/messageContext";
