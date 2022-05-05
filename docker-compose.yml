@@ -4,6 +4,7 @@ services:
     restart: unless-stopped
     environment:
       - DISCORD_API_TOKEN=
+      - SLACK_WEBHOOK_URL=
 
     # OPTIONAL: Pass in a .env file rather than specifying it here
     # env_file:

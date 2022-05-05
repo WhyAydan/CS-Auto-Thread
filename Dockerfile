@@ -19,8 +19,6 @@ COPY package*.json ./
 RUN npm install --production
 COPY --from=build /app/dist ./dist
 
-VOLUME [ "/configs" ]
-
 USER node
 
 CMD ["node", "--enable-source-maps", "./dist/index.js"]
