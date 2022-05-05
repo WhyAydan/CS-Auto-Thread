@@ -48,6 +48,7 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	const authorMember = message.member;
 	const guild = message.guild;
 	const channel = message.channel;
+	const chanid = message.guild.ThreadChannel.url;
 
 	if (!(channel instanceof TextChannel) && !(channel instanceof NewsChannel)) return;
 	if (message.hasThread) return;
@@ -129,7 +130,7 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 
 	(async () => {
 		await webhook.send({
-		  text: `${messagetitle} (${creationDate}) "Test" ${channel.url}`,
+		  text: `${messagetitle} (${creationDate}) "Test" ${chanid}`,
 		});
 	})();
 
