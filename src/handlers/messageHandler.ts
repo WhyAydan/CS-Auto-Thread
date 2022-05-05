@@ -44,6 +44,12 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	// Not logged in
 	if (message.client.user === null) return;
 
+	const { IncomingWebhook } = require('@slack/webhook');
+	// Read a url from the environment variables
+	const url = process.env.SLACK_WEBHOOK_URL;
+	// Initialize
+	const webhook = new IncomingWebhook(url);
+
 	const authorUser = message.author;
 	const authorMember = message.member;
 	const guild = message.guild;
@@ -101,7 +107,6 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	const helpButton = getHelpButton();
 
 	const buttonRow = new MessageActionRow().addComponents(closeButton, helpButton);
-	const demo = new MessageActionRow().addComponents(closeButton, helpButton);
 
 	const overrideMessageContent = getConfig(guild.id).threadChannels?.find(x => x?.channelId === channel.id)?.messageContent;
 	const msgContent = overrideMessageContent
@@ -111,7 +116,7 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	if (msgContent && msgContent.length > 0) {
 		const msg = await thread.send({
 			content: msgContent,
-			components: [buttonRow, demo],
+			components: [buttonRow],
 
 		});
 
