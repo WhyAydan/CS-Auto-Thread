@@ -2,6 +2,7 @@ import { type Message, MessageActionRow, MessageButton, NewsChannel, TextChannel
 import { emojisEnabled, getConfig, includeBotsForAutothread, getSlowmodeSeconds } from "../helpers/configHelpers";
 import { getMessage, resetMessageContext, addMessageContext, isAutoThreadChannel, getHelpButton, replaceMessageVariables, getThreadAuthor } from "../helpers/messageHelpers";
 import { getRequiredPermissions, getSafeDefaultAutoArchiveDuration } from "../helpers/permissionHelpers";
+import type { MessageContext } from "../types/messageContext";
 
 export async function handleMessageCreate(message: Message): Promise<void> {
 	// Server outage
@@ -48,6 +49,9 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	const authorMember = message.member;
 	const guild = message.guild;
 	const channel = message.channel;
+	const contexts: Map<Snowflake, MessageContext> = new Map();
+	const context = contexts.get(requestId);
+	const channelname = context.channel ? `<#${context.channel.id}>` : "";
 	let server = message.guild.id, // ID of the guild the message was sent in
 	chanid = message.channel.id // ID of the channel the message was sent in
 
@@ -131,7 +135,7 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 
 	(async () => {
 		await webhook.send({
-		  text: `New Thread Made With The Title ${messagetitle} at ${creationDate} - https://discord.com/channels/${server}/${chanid}`,
+		  text: `New Thread Made With The Title ${messagetitle} at ${creationDate} ${channelname} - https://discord.com/channels/${server}/${chanid}`,
 		});
 	})();
 
