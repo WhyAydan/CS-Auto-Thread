@@ -52,7 +52,7 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 
 	(async () => {
 		await webhook.send({
-		  text: 'I\'ve got news for you...',
+		  text: 'New Thread Created In'+ channel.text,
 		});
 	})();
 
