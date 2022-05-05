@@ -50,7 +50,8 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	const channel = message.channel;
 	let server = message.guild.id, // ID of the guild the message was sent in
 	chanid = message.channel.id // ID of the channel the message was sent in
-	const channelname = message.guild.channels.cache.find(channel => channel.id === chanid)[0].name;
+	const channelname = message.guild.channels.cache.get(chanid);
+	
 
 	
 
@@ -138,5 +139,6 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 		});
 	})();
 
+	console.log(channelname)
 	resetMessageContext(requestId);
 }
