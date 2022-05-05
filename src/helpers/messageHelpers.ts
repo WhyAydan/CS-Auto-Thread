@@ -7,7 +7,6 @@ import {
 	type ThreadChannel,
 	type User,
 	type Snowflake,
-	type Name,
 } from "discord.js";
 
 import type { MessageContext } from "../types/messageContext";
@@ -136,6 +135,7 @@ export function getHelpButton(): MessageButton {
 		.setStyle("SECONDARY")
 		.setEmoji("937931337942306877"); // :slash_commands:
 }
+
 
 async function getThreadStartMessage(threadChannel: TextBasedChannel | null): Promise<Message | null> {
 	if (!threadChannel?.isThread()) { return null; }

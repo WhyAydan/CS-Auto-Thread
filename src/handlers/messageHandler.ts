@@ -1,5 +1,4 @@
-//import { type Message, MessageActionRow, MessageButton, NewsChannel, TextChannel, ThreadChannel, Name, SnowflakeUtil, type Snowflake, Permissions } from "discord.js";
-import * as "discord.js";
+import { type Message, MessageActionRow, MessageButton, NewsChannel, TextChannel, ThreadChannel, Name, SnowflakeUtil, type Snowflake, Permissions } from "discord.js";
 import { emojisEnabled, getConfig, includeBotsForAutothread, getSlowmodeSeconds } from "../helpers/configHelpers";
 import { getMessage, resetMessageContext, addMessageContext, isAutoThreadChannel, getHelpButton, replaceMessageVariables, getThreadAuthor } from "../helpers/messageHelpers";
 import { getRequiredPermissions, getSafeDefaultAutoArchiveDuration } from "../helpers/permissionHelpers";
@@ -49,8 +48,6 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	const authorMember = message.member;
 	const guild = message.guild;
 	const channel = message.channel;
-	const channell = message.channels.get(message.channel.id)
-	let content = `**${message.channell.parent.name}**\n${channell.name}\n${message.content}`
 
 	let server = message.guild.id, // ID of the guild the message was sent in
 	chanid = message.channel.id // ID of the channel the message was sent in
@@ -135,7 +132,7 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 
 	(async () => {
 		await webhook.send({
-		  text: `New Thread Made With The Title ${messagetitle} at ${creationDate} ${content} - https://discord.com/channels/${server}/${chanid}`,
+		  text: `New Thread Made With The Title ${messagetitle} at ${creationDate} ${TextChannel} - https://discord.com/channels/${server}/${chanid}`,
 		});
 	})();
 
