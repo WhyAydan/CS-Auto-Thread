@@ -7,9 +7,6 @@ RUN npm install
 
 COPY . .
 RUN npm run build
-RUN mkdir /configs
-RUN chown node:node /configs
-
 
 # Run
 FROM node:16.14.0-slim
@@ -22,7 +19,7 @@ COPY package*.json ./
 RUN npm install --production
 COPY --from=build /app/dist ./dist
 
-VOLUME [ "/configs" ]
+VOLUME configs
 
 USER node
 
