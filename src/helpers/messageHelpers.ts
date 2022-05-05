@@ -136,6 +136,7 @@ export function getHelpButton(): MessageButton {
 		.setEmoji("937931337942306877"); // :slash_commands:
 }
 
+
 async function getThreadStartMessage(threadChannel: TextBasedChannel | null): Promise<Message | null> {
 	if (!threadChannel?.isThread()) { return null; }
 	if (!threadChannel.parentId) { return null; }

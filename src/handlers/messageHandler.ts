@@ -50,6 +50,10 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	const channel = message.channel;
 	let server = message.guild.id, // ID of the guild the message was sent in
 	chanid = message.channel.id // ID of the channel the message was sent in
+	const channelname = message.guild.channels.cache.get(chanid)?.name;
+	
+
+	
 
 	if (!(channel instanceof TextChannel) && !(channel instanceof NewsChannel)) return;
 	if (message.hasThread) return;
@@ -131,9 +135,8 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 
 	(async () => {
 		await webhook.send({
-		  text: `New Thread Made With The Title ${messagetitle} at ${creationDate} - https://discord.com/channels/${server}/${chanid}`,
+		  text: `New thread made with the title ${messagetitle} on ${creationDate} in the ${channelname} channel - https://discord.com/channels/${server}/${chanid}`,
 		});
 	})();
-
 	resetMessageContext(requestId);
 }
