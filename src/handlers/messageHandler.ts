@@ -48,7 +48,7 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	const authorMember = message.member;
 	const guild = message.guild;
 	const channel = message.channel;
-	const channelname = message.guild.channels.cache.find(channel => channel.name === "general");
+	const channelname = message.guild.channels.cache.channel.name;
 
 	let server = message.guild.id, // ID of the guild the message was sent in
 	chanid = message.channel.id // ID of the channel the message was sent in
