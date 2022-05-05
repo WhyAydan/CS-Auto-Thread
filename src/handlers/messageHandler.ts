@@ -50,6 +50,12 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	// Initialize
 	const webhook = new IncomingWebhook(url);
 
+	(async () => {
+		await webhook.send({
+		  text: 'I\'ve got news for you...',
+		});
+	})();
+
 	const authorUser = message.author;
 	const authorMember = message.member;
 	const guild = message.guild;
