@@ -130,7 +130,7 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 
 	(async () => {
 		await webhook.send({
-		  text: `${messagetitle} (${creationDate}) "Test" ${chanid}`,
+		  text: `"New Thread Made In" ${channel} "with the title" ${messagetitle} "at" (${creationDate})`,
 		});
 	})();
 
