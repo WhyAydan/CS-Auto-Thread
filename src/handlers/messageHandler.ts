@@ -44,19 +44,6 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 	// Not logged in
 	if (message.client.user === null) return;
 
-	const { IncomingWebhook } = require('@slack/webhook');
-	// Read a url from the environment variables
-	const url = process.env.SLACK_WEBHOOK_URL;
-	// Initialize
-	const webhook = new IncomingWebhook(url);
-
-
-	(async () => {
-		await webhook.send({
-		  text: `${messagetitle} (${creationDate})`,
-		});
-	})();
-
 	const authorUser = message.author;
 	const authorMember = message.member;
 	const guild = message.guild;
@@ -132,6 +119,19 @@ async function autoCreateThread(message: Message, requestId: Snowflake) {
 			await thread.lastMessage?.delete();
 		}
 	}
+
+	const { IncomingWebhook } = require('@slack/webhook');
+	// Read a url from the environment variables
+	const url = process.env.SLACK_WEBHOOK_URL;
+	// Initialize
+	const webhook = new IncomingWebhook(url);
+
+
+	(async () => {
+		await webhook.send({
+		  text: `${messagetitle} (${creationDate})`,
+		});
+	})();
 
 	resetMessageContext(requestId);
 }
