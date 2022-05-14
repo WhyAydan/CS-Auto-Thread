@@ -1,5 +1,5 @@
 # Build
-FROM node:16.14.0-slim AS build
+FROM node:16.15.0-slim AS build
 WORKDIR /app
 
 COPY package*.json ./
