@@ -1,5 +1,6 @@
 # Build
 FROM node:16.15.0-slim AS build
+LABEL image.authors="me@aydan.dev Aydan Abrahams"
 WORKDIR /app
 
 COPY package*.json ./
