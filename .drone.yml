@@ -11,3 +11,24 @@ steps:
   image: node
   commands:
   - npm run build
+  when:
+    branch:
+    - main
+
+---
+kind: pipeline
+type: ssh
+name: SSH
+
+server:
+  host:
+    from_secret: host
+  user:
+    from_secret: username
+  password:
+    from_secret: password
+steps:
+- name: build
+  commands:
+  - npm ci
+  - npm run build
