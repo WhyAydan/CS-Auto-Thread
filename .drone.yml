@@ -1,3 +1,9 @@
+---
+kind: secret
+name: password
+data: LcQd7xY+auTT0swh4fgJCABMwutHITWvNaxoU2QFQRsaCJwj7rVehQDCdjE=
+
+---
 kind: pipeline
 type: ssh
 name: default
