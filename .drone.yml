@@ -2,10 +2,6 @@ kind: pipeline
 type: docker
 name: Docker
 
-environment:
-  demo:
-    from_secret: test
-
 steps:
 - name: Install
   image: node
@@ -16,6 +12,9 @@ steps:
   commands:
   - npm run build
   - echo $demo
+  environment:
+    demo:
+      from_secret: test
   when:
     branch:
     - main
