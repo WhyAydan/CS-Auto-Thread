@@ -9,8 +9,12 @@ steps:
   - npm ci
 - name: Build
   image: node
+  enviroment:
+    demo:
+      from_secret: test
   commands:
   - npm run build
+  - echo $demo
   when:
     branch:
     - main
