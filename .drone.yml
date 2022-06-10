@@ -1,17 +1,14 @@
 kind: pipeline
 type: ssh
-name: SSH
+name: default
 
 server:
-  host:
-    from_secret: host
-  user:
-    from_secret: username
+  host: vps1.aydan.dev
+  user: root
   password:
     from_secret: password
-    
+
 steps:
-- name: build
+- name: greeting
   commands:
-  - npm ci
-  - npm run build
+  - echo hello world
