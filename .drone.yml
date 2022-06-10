@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: default
+name: Docker
 
 steps:
 - name: Install
@@ -16,7 +16,6 @@ steps:
     - main
 
 ---
-
 kind: pipeline
 type: ssh
 name: SSH
@@ -28,6 +27,7 @@ server:
     from_secret: username
   ssh_key:
     from_secret: ssh_key
+    
 steps:
 - name: build
   commands:
