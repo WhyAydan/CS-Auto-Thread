@@ -7,8 +7,8 @@ server:
     from_secret: host
   user:
     from_secret: username
-  ssh_key:
-    from_secret: ssh_key
+  password:
+    from_secret: password
     
 steps:
 - name: build
