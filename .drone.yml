@@ -14,7 +14,7 @@ steps:
       from_secret: test
   commands:
   - npm run build
-  - echo %demo%
+  - echo $demo
   when:
     branch:
     - main
