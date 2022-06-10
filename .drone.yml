@@ -16,6 +16,7 @@ steps:
     - main
 
 ---
+
 kind: pipeline
 type: ssh
 name: SSH
@@ -25,8 +26,8 @@ server:
     from_secret: host
   user:
     from_secret: username
-  password:
-    from_secret: password
+  ssh_key:
+    from_secret: ssh_key
 steps:
 - name: build
   commands:
