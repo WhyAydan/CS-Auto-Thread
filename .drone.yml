@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: Docker
+name: Testing
 
 steps:
 - name: Install
@@ -26,3 +26,5 @@ name: Docker Image
     auth:
       from_secret: github
     dockerfile: Dockerfile
+depends_on:
+  Testing
