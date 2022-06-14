@@ -28,4 +28,4 @@ steps:
       from_secret: github
     dockerfile: Dockerfile
 depends_on:
-  Testing
+  - Testing
