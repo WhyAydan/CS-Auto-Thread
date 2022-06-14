@@ -24,7 +24,9 @@ steps:
     repo: whyaydan/cs-auto-thread
     auto_tag: true
     registry: ghcr.io
-    auth:
+    username:
+      from_secret: username
+    password:
       from_secret: github
     dockerfile: Dockerfile
 depends_on:
