@@ -27,7 +27,7 @@ steps:
     username:
       from_secret: username
     password:
-      from_secret: github
+      from_secret: password
     dockerfile: Dockerfile
 depends_on:
   - Testing
