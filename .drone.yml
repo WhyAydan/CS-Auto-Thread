@@ -31,3 +31,6 @@ steps:
     dockerfile: Dockerfile
 depends_on:
   - Testing
+trigger:
+  branch:
+  - main
