@@ -11,10 +11,3 @@ steps:
   image: node
   commands:
   - npm run build
-  - echo $demo
-  environment:
-    demo:
-      from_secret: test
-  when:
-    branch:
-    - main
