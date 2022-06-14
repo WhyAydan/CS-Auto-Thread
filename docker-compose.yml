@@ -1,6 +1,6 @@
 services:
   at:
-    image: ghcr.io/whyaydan/cs-auto-thread
+    image: ghcr.io/whyaydan/cs-auto-thread:latest
     restart: unless-stopped
     environment:
       - DISCORD_API_TOKEN=
