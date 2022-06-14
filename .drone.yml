@@ -21,7 +21,7 @@ steps:
 - name: build  
   image: plugins/docker
   settings:
-    repo: whyaydan/cs-auto-thread
+    repo: ghcr.io/whyaydan/cs-auto-thread
     auto_tag: true
     registry: ghcr.io
     username:
