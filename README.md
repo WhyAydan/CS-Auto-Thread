@@ -14,3 +14,26 @@ This step-by-step guide assumes you have [NodeJS](https://nodejs.org/en/) versio
     - [x] Read message history
 6. Run `npm start`
 7. Deploy! :tada:
+
+
+I require the following permissions to function, along with the `applications.commands` and `bot` scopes.
+
+-   [x] View channels
+-   [x] Send messages
+-   [x] Send messages in threads
+-   [x] Create public threads
+-   [x] Read message history
+
+You can use this link to invite your self-hosted version of Needle, replacing `<APP ID>` with your bot's application ID:
+
+```
+https://discord.com/oauth2/authorize?client_id=<APP ID>&permissions=309237713920&scope=bot%20applications.commands
+```
+
+### 🐳 Docker
+
+[official Docker image](https://github.com/WhyAydan/CS-Auto-Thread/pkgs/container/cs-auto-thread). Releases are tagged with latest release tag. Branches are tagged by their name. To run the image, write the following command, replacing `token` with your bot's token:
+
+```sh
+docker run -d --name CS-Auto-Thread --env DISCORD_API_TOKEN=token ghcr.io/whyaydan/cs-auto-thread:latest
+```
