@@ -11,20 +11,3 @@ steps:
   image: node
   commands:
   - npm run build
-  
-  
----
-kind: pipeline
-name: Docker Image
-
-- name: build  
-  image: plugins/docker
-  settings:
-    repo: WhyAydan/CS-Auto-Thread
-    auto_tag: true
-    registry: ghcr.io
-    auth:
-      from_secret: github
-    dockerfile: Dockerfile
-depends_on:
-  Testing
