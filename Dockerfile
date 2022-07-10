@@ -1,5 +1,5 @@
 # Build
-FROM node:16.15.0-slim AS build
+FROM node:16.16.0-slim AS build
 WORKDIR /app
 
 COPY package*.json ./
@@ -9,7 +9,7 @@ COPY . .
 RUN npm run build
 
 # Run
-FROM node:16.15.0-slim
+FROM node:16.16.0-slim
 WORKDIR /app
 
 ENV CONFIGS_PATH=/configs
